@@ -1,0 +1,20 @@
+# permissions for end users to view checkdeploys.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: checkdeploy-viewer-role
+rules:
+- apiGroups:
+  - core.example.com
+  resources:
+  - checkdeploys
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - core.example.com
+  resources:
+  - checkdeploys/status
+  verbs:
+  - get
